@@ -36,7 +36,9 @@ app.use("/assets", express.static(path.join(__dirname, 'public/assets')));
 /*File Storage */
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, "public/assets")
+        // Adjust the path for local development
+        const uploadPath = process.env.NODE_ENV === 'production' ? "public/assets" : "./public/assets";
+        cb(null, uploadPath);
     },
     filename: function (req, file, cb) {
         cb(null, file.originalname);
@@ -59,12 +61,10 @@ mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => {
-    app.listen(PORT, () => console.log(`server Port :${PORT}`));
-    /*Add Data One time*/
+    app.listen(PORT, () => console.log(`Server running on Port: ${PORT}`));
+
+    // Add Data One time (commented out)
     // User.insertMany(users);
     // Post.insertMany(posts);
-
-
 }).catch((error) => console.log(`${error} did not connect`));
-
 
