@@ -33,7 +33,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors(
     {
         origin: 'https://sociopath-mern.vercel.app',
-        methods: ['GET', 'POST'],
+        methods: ['POST', 'GET'],
         credentials: true // Allow credentials (cookies, HTTP authentication) to be included in cross-origin requests
     }
 ));
