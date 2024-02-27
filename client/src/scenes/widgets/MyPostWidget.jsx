@@ -46,7 +46,7 @@ import {
         formData.append("picturePath", image.name);
       }
   
-      const response = await fetch(`https://sociopath-mern-api.vercel.app/posts`, {
+      const response = await fetch(`https://sociopath-mern-x747.vercel.app/posts`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
         body: formData,

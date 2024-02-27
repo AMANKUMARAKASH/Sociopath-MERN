@@ -8,7 +8,7 @@ const UserImage = ({ image, size = "60px" }) => {
         width={size}
         height={size}
         alt="user"
-        src={`https://sociopath-mern-api.vercel.app/assets/${image}`}
+        src={`https://sociopath-mern-x747.vercel.app/assets/${image}`}
       />
     </Box>
   );

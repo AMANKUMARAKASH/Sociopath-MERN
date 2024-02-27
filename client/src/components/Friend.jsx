@@ -25,7 +25,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
 
     const patchFriend = async () => {
         const response = await fetch(
-            `https://sociopath-mern-api.vercel.app/users/${_id}/${friendId}`,
+            `https://sociopath-mern-x747.vercel.app/users/${_id}/${friendId}`,
             {
                 method: "PATCH",
                 headers: {
